@@ -76,7 +76,9 @@ void loop() {
   //if device exists, and it has a matching name prefix
   if (peripheral && 'D' == peripheral.localName()[0] && 'V' == peripheral.localName()[1] && '_' == peripheral.localName()[2]) {
 	String teamNumStr = String(teamNum);
-    String deviceNumStr = String(peripheral.localName()[3]);
+    	String deviceNumStr = String(peripheral.localName()[3]);
+	//if you want to use device MAC address instead:
+	peripheral.address();
 	
 	//create the URL for reporting the device found and retrieving the quiz 
 	//this is what was used for the winter school:
